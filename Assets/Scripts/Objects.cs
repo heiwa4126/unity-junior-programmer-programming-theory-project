@@ -6,7 +6,7 @@ public class Objects : MonoBehaviour
 	protected Rigidbody rb;
 	const float lowestY = 0.1f;
 	[SerializeField] private float jumpForce = 5.0f;
-	protected float TurnY { get; private set; } = 0.5f; // ENCAPSULATION
+	protected float TurnY { get; private set; } = 90.0f; // ENCAPSULATION
 
 	void Start() // INHERITANCE
 	{
@@ -28,6 +28,6 @@ public class Objects : MonoBehaviour
 
 	virtual protected void Rotation() // POLYMORPHISM and ABSTRACTION
 	{
-		transform.Rotate(0, TurnY, 0);
+		transform.Rotate(0, TurnY * Time.deltaTime, 0);
 	}
 }
