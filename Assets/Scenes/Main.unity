@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 31704153}
   - component: {fileID: 31704152}
   - component: {fileID: 31704155}
-  - component: {fileID: 31704156}
+  - component: {fileID: 31704157}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -238,7 +238,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 0
---- !u!114 &31704156
+--- !u!114 &31704157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 31704150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01182f699e1fd564a8c1a17f2f36f83f, type: 3}
+  m_Script: {fileID: 11500000, guid: 186d735aa4706e54bbad2972297a573a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lowestY: 0.1
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 288535839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01182f699e1fd564a8c1a17f2f36f83f, type: 3}
+  m_Script: {fileID: 11500000, guid: f329a85041d95a24495c6501f6f49ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lowestY: 0.1
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 610638554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01182f699e1fd564a8c1a17f2f36f83f, type: 3}
+  m_Script: {fileID: 11500000, guid: 525da502c926eb24c8c074623c89c385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lowestY: 0.1

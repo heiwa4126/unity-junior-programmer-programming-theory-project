@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Objects : MonoBehaviour
 {
-	private Rigidbody rb;
+	protected Rigidbody rb;
 	private float initialY;
 	[SerializeField] private float lowestY = 0.1f;
 	[SerializeField] private float jumpForce = 5.0f;
-	[SerializeField] private float turnY = 0.5f;
+	[SerializeField] protected float turnY = 0.5f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -17,16 +15,20 @@ public class Objects : MonoBehaviour
 		initialY = transform.position.y;
 	}
 
-	public void Jump()
+	virtual protected void Jump()
 	{
 		rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+	}
+
+	virtual protected void Rotation()
+	{
+		transform.Rotate(0, turnY, 0);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		transform.Rotate(0, turnY, 0);
-
+		Rotation();
 		if (transform.position.y - initialY < lowestY && Input.GetKeyDown(KeyCode.Space))
 			Jump();
 	}
