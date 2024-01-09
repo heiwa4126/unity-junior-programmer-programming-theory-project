@@ -2,34 +2,32 @@
 
 public class Objects : MonoBehaviour
 {
-	protected Rigidbody rb;
 	private float initialY;
-	[SerializeField] private float lowestY = 0.1f;
+	protected Rigidbody rb;
+	const float lowestY = 0.1f;
 	[SerializeField] private float jumpForce = 5.0f;
-	[SerializeField] protected float turnY = 0.5f;
+	protected float TurnY { get; private set; } = 0.5f; // ENCAPSULATION
 
-	// Start is called before the first frame update
-	void Start()
+	void Start() // INHERITANCE
 	{
 		rb = GetComponent<Rigidbody>();
 		initialY = transform.position.y;
 	}
 
-	virtual protected void Jump()
-	{
-		rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-	}
-
-	virtual protected void Rotation()
-	{
-		transform.Rotate(0, turnY, 0);
-	}
-
-	// Update is called once per frame
-	void Update()
+	void Update() // INHERITANCE
 	{
 		Rotation();
 		if (transform.position.y - initialY < lowestY && Input.GetKeyDown(KeyCode.Space))
 			Jump();
+	}
+
+	private void Jump() // ABSTRACTION
+	{
+		rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+	}
+
+	virtual protected void Rotation() // POLYMORPHISM and ABSTRACTION
+	{
+		transform.Rotate(0, TurnY, 0);
 	}
 }
