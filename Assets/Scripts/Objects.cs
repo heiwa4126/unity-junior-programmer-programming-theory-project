@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Objects : MonoBehaviour
 {
@@ -17,8 +18,11 @@ public class Objects : MonoBehaviour
 	void Update() // INHERITANCE
 	{
 		Rotation();
-		if (transform.position.y - initialY < lowestY && Input.GetKeyDown(KeyCode.Space))
+		if (transform.position.y - initialY < lowestY
+			&& Keyboard.current.spaceKey.wasPressedThisFrame)
+		{
 			Jump();
+		}
 	}
 
 	private void Jump() // ABSTRACTION

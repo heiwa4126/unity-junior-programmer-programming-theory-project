@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MenuSceneManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class MenuSceneManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Keyboard.current.spaceKey.wasPressedThisFrame)
 		{
 			SceneManager.LoadScene(1);
 		}
